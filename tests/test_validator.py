@@ -47,3 +47,12 @@ class TestValidator(unittest.TestCase):
 
         # Assert
         self.assertTrue(result)
+    def test_it_will_reject_a_username_if_there_is_special_characters(self):
+        # Assume
+        username = 'Reval!'
+        
+        # Action
+        result = self.validator.usernmae_is_valid(username)
+        
+        # Assert
+        self.assertFalse(result)
